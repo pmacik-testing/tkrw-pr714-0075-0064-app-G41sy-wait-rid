@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-4scm
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-4scm
+    app.kubernetes.io/part-of: tkrw-pr714-0075-0064-app
+  name: devfile-sample-4scmar8v
+spec:
+  path: /
+  port:
+    targetPort: 3001
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: devfile-sample-4scm
+    weight: null
+status: {}
